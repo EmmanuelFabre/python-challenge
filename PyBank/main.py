@@ -7,7 +7,7 @@ from pathlib import Path
 
 path = Path('/Users/emmanuelfabre/Desktop/03_python_homework_Instructions_PyBank_Resources_budget_data.csv')
 
-#change in pnl function
+# analysis/PnL function
 def analysis(BudgetCsv):
 
 	with open(BudgetCsv, "r") as csvfile:
