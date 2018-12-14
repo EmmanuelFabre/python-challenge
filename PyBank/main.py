@@ -42,12 +42,22 @@ def analysis(BudgetCsv):
 		min_pnl_change_date = str(date[pnl_change.index(min(pnl_change))])		# date of min value
 		avg_pnl_change += sum(pnl_change)/len(pnl_change)						# average change between months
 
-		print("Financial Analysis")
-		print("_________________________________________________")
-		print("Total Months: " + str(len(pnl)))
-		print("Total: " + str(sum(pnl)))
-		print("Average Change: $" + str(round(avg_pnl_change, 2)))
-		print("Greatest Increase in Profits: " + str(max_pnl_change_date) + " $" + str(max_pnl_change))
-		print("Greatest Decrease in Profits: " + str(min_pnl_change_date) + " $" + str(min_pnl_change))
+		with open("Fin_Analysis.txt", "w") as text_file:
+
+			print("Financial Analysis")
+			print("_________________________________________________")
+			print("Total Months: " + str(len(pnl)))
+			print("Total: " + str(sum(pnl)))
+			print("Average Change: $" + str(round(avg_pnl_change, 2)))
+			print("Greatest Increase in Profits: " + str(max_pnl_change_date) + " $" + str(max_pnl_change))
+			print("Greatest Decrease in Profits: " + str(min_pnl_change_date) + " $" + str(min_pnl_change))
+
+			print("Financial Analysis", file= text_file)
+			print("_________________________________________________", file= text_file)
+			print("Total Months: " + str(len(pnl)), file= text_file)
+			print("Total: " + str(sum(pnl)), file= text_file)
+			print("Average Change: $" + str(round(avg_pnl_change, 2)), file= text_file)
+			print("Greatest Increase in Profits: " + str(max_pnl_change_date) + " $" + str(max_pnl_change), file= text_file)
+			print("Greatest Decrease in Profits: " + str(min_pnl_change_date) + " $" + str(min_pnl_change), file= text_file)
 
 analysis(path)

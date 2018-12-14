@@ -35,13 +35,24 @@ def election(electionCsv):
 		Li_percentage = (Li/total_votes)* 100
 		OTooley_percentage = (OTooley/total_votes)* 100
 
-		print("Election Results")
-		print("_______________________")
-		print("Total Votes: " + str(total_votes))
-		print("___________________________")
-		print("Khan: " + str(Khan_percentage) + " " + "(" + str(Khan) + ")")
-		print("Correy: " + str(Correy_percentage) + " " + "(" + str(Correy) + ")")
-		print("Li: " + str(Li_percentage) + " " + "(" + str(Li) + ")")
-		print("O'Tooley: " + str(OTooley_percentage)+ " " + "(" + str(OTooley) + ")")
+		with open("elec_results.txt", "w") as text_file:
+
+			print("Election Results")
+			print("_______________________")
+			print("Total Votes: " + str(total_votes))
+			print("___________________________")
+			print("Khan: " + str(Khan_percentage) + " " + "(" + str(Khan) + ")")
+			print("Correy: " + str(Correy_percentage) + " " + "(" + str(Correy) + ")")
+			print("Li: " + str(Li_percentage) + " " + "(" + str(Li) + ")")
+			print("O'Tooley: " + str(OTooley_percentage)+ " " + "(" + str(OTooley) + ")")
+
+			print("Election Results", file= text_file)
+			print("_______________________", file= text_file)
+			print("Total Votes: " + str(total_votes), file= text_file)
+			print("___________________________", file= text_file)
+			print("Khan: " + str(Khan_percentage) + " " + "(" + str(Khan) + ")", file= text_file)
+			print("Correy: " + str(Correy_percentage) + " " + "(" + str(Correy) + ")", file= text_file)
+			print("Li: " + str(Li_percentage) + " " + "(" + str(Li) + ")", file= text_file)
+			print("O'Tooley: " + str(OTooley_percentage)+ " " + "(" + str(OTooley) + ")", file= text_file)
 
 election(path)
