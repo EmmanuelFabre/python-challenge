@@ -25,34 +25,39 @@ def election(electionCsv):
 		counter=collections.Counter(votes)
 		#print(counter)					# debug statement
 
+		#set variables using collections library
 		Khan = counter['Khan']
 		Correy = counter['Correy']
 		Li = counter['Li']
 		OTooley = counter['O\'Tooley']
 
-		Khan_percentage = (Khan/total_votes)* 100
-		Correy_percentage = (Correy/total_votes)* 100
-		Li_percentage = (Li/total_votes)* 100
-		OTooley_percentage = (OTooley/total_votes)* 100
+		# percentage of votes per candidate, rounded to one decimal place
+		Khan_percentage = round((Khan/total_votes)* 100)
+		Correy_percentage = round((Correy/total_votes)* 100)
+		Li_percentage = round((Li/total_votes)* 100)
+		OTooley_percentage = round((OTooley/total_votes)* 100)
+
 
 		with open("elec_results.txt", "w") as text_file:
 
+			# print to terminal
 			print("Election Results")
 			print("_______________________")
 			print("Total Votes: " + str(total_votes))
 			print("___________________________")
-			print("Khan: " + str(Khan_percentage) + " " + "(" + str(Khan) + ")")
-			print("Correy: " + str(Correy_percentage) + " " + "(" + str(Correy) + ")")
-			print("Li: " + str(Li_percentage) + " " + "(" + str(Li) + ")")
-			print("O'Tooley: " + str(OTooley_percentage)+ " " + "(" + str(OTooley) + ")")
+			print("Khan: " + str(Khan_percentage) + "%" + " " + "(" + str(Khan) + ")")
+			print("Correy: " + str(Correy_percentage) + "%" + " " + "(" + str(Correy) + ")")
+			print("Li: " + str(Li_percentage) + "%" + " " + "(" + str(Li) + ")")
+			print("O'Tooley: " + str(OTooley_percentage) + "%" + " " + "(" + str(OTooley) + ")")
 
+			# print to txt file 'elec_results.txt'
 			print("Election Results", file= text_file)
 			print("_______________________", file= text_file)
 			print("Total Votes: " + str(total_votes), file= text_file)
 			print("___________________________", file= text_file)
-			print("Khan: " + str(Khan_percentage) + " " + "(" + str(Khan) + ")", file= text_file)
-			print("Correy: " + str(Correy_percentage) + " " + "(" + str(Correy) + ")", file= text_file)
-			print("Li: " + str(Li_percentage) + " " + "(" + str(Li) + ")", file= text_file)
-			print("O'Tooley: " + str(OTooley_percentage)+ " " + "(" + str(OTooley) + ")", file= text_file)
+			print("Khan: " + str(Khan_percentage) + "%" + " " + "(" + str(Khan) + ")", file= text_file)
+			print("Correy: " + str(Correy_percentage) + "%" + " " + "(" + str(Correy) + ")", file= text_file)
+			print("Li: " + str(Li_percentage) + "%" + " " + "(" + str(Li) + ")", file= text_file)
+			print("O'Tooley: " + str(OTooley_percentage) + "%" + " " + "(" + str(OTooley) + ")", file= text_file)
 
 election(path)
