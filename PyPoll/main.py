@@ -8,7 +8,7 @@ import collections
 #encode path
 from pathlib import Path
 
-path = Path('/Users/emmanuelfabre/Desktop/03_python_homework_Instructions_PyBank_Resources_budget_data.csv')
+path = Path('03_python_homework_Instructions_PyBank_Resources_budget_data.csv')
 
 # analysis/PnL function
 def analysis(BudgetCsv):
@@ -68,7 +68,7 @@ analysis(path)
 #########################
 
 
-path_1 = Path('/Users/emmanuelfabre/Desktop/pythonstuff/Assignment3/03_python_homework_Instructions_PyPoll_Resources_election_data.csv')
+path_1 = Path('03_python_homework_Instructions_PyPoll_Resources_election_data.csv')
 
 def election(electionCsv):
 	with open(electionCsv, "r") as csvfile:
@@ -102,10 +102,12 @@ def election(electionCsv):
 		with open("elec_results.txt", "w") as text_file:
 
 			# print to terminal
+			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 			print("Election Results")
-			print("_______________________")
+			print("_________________________________________________")
 			print("Total Votes: " + str(total_votes))
-			print("___________________________")
+			print("_________________________________________________")
 			print("Khan: " + str(Khan_percentage) + "%" + " " + "(" + str(Khan) + ")")
 			print("Correy: " + str(Correy_percentage) + "%" + " " + "(" + str(Correy) + ")")
 			print("Li: " + str(Li_percentage) + "%" + " " + "(" + str(Li) + ")")
@@ -113,9 +115,9 @@ def election(electionCsv):
 
 			# print to txt file 'elec_results.txt'
 			print("Election Results", file= text_file)
-			print("_______________________", file= text_file)
+			print("_________________________________________________", file= text_file)
 			print("Total Votes: " + str(total_votes), file= text_file)
-			print("___________________________", file= text_file)
+			print("_________________________________________________", file= text_file)
 			print("Khan: " + str(Khan_percentage) + "%" + " " + "(" + str(Khan) + ")", file= text_file)
 			print("Correy: " + str(Correy_percentage) + "%" + " " + "(" + str(Correy) + ")", file= text_file)
 			print("Li: " + str(Li_percentage) + "%" + " " + "(" + str(Li) + ")", file= text_file)
